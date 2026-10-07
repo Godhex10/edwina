@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edwina · Gloss &amp; Glam</title>
+  <meta name="description" content="Edwina — juicy lip glosses, lip oils and girly accessories. Glossy lips, sweet little moments." />
+  <meta name="theme-color" content="#ff3d8b" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💋</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-tube">
+      <div class="loader-fill"></div>
+      <div class="loader-shine"></div>
+    </div>
+    <div class="loader-word">Edwina</div>
+    <div class="loader-sub">getting glossy…</div>
+  </div>
+
+  <!-- Gooey filter for liquid blobs -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Ambient background -->
+  <div class="ambient" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+  <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+
+  <!-- ============ DRIP BAND ============ -->
+  <div class="drip-band" id="dripBand" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo" aria-label="Edwina home">
+      <svg class="logo-bow" viewBox="0 0 200 160" aria-hidden="true">
+        <defs>
+          <linearGradient id="bowGradLogo" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffb3d1" /><stop offset="1" stop-color="#ff3d8b" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#bowGradLogo)" d="M100 70 C70 30 20 20 20 60 C20 95 70 95 100 75Z M100 70 C130 30 180 20 180 60 C180 95 130 95 100 75Z M95 78 L70 140 L85 135 L92 148 L100 82Z M105 78 L130 140 L115 135 L108 148 L100 82Z" />
+        <ellipse cx="100" cy="73" rx="14" ry="16" fill="#ff3d8b" />
+      </svg>
+      <span class="logo-word">Edwina</span>
+      <span class="logo-tag">gloss &amp; glam</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#shop">Shop</a>
+      <a href="#shades">Try a shade</a>
+      <a href="#drop">The Drop</a>
+      <a href="#love">Love notes</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.6 1.2 4.4 2.6.8-1.4 2.3-2.6 4.4-2.6 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>
+        <span class="count" id="wishCount">0</span>
+      </button>
+      <button class="icon-btn bag-btn" id="bagBtn" aria-label="Open shopping bag">
+        <svg viewBox="0 0 24 24"><path d="M6 7h12l1 13a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 20L6 7z"/><path d="M9 9V6a3 3 0 0 1 6 0v3" fill="none"/></svg>
+        <span class="count" id="bagCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="pill-eyebrow reveal"><span class="dot"></span> New in · Cherry Glaze collection</span>
+        <h1 class="reveal">
+          Glossy lips,<br />
+          <em>sweet</em> little
+          <span class="script shimmer-text">moments</span>
+        </h1>
+        <p class="lead reveal">Juicy, mirror-shine glosses and the cutest accessories — made for girls who
+          romanticise everything. Non-sticky, vegan, and dangerously kissable.</p>
+        <div class="hero-ctas reveal">
+          <a href="#shop" class="btn btn-gloss">
+            <span>Shop the gloss</span>
+            <svg viewBox="0 0 24 24" class="arrow"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a href="#shades" class="btn btn-glass">Find your shade 💋</a>
+        </div>
+        <ul class="hero-stats reveal">
+          <li><strong>4.9<span class="star">★</span></strong><span>2,000+ reviews</span></li>
+          <li><strong>100%</strong><span>vegan &amp; cruelty-free</span></li>
+          <li><strong>0%</strong><span>sticky. ever.</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-stage reveal">
+        <div class="halo"></div>
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-glass orb-3"></span>
+        <span class="orb orb-glass orb-4"></span>
+
+        <svg class="ring-text" viewBox="0 0 300 300" aria-hidden="true">
+          <defs><path id="circlePath" d="M150,150 m-120,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0" /></defs>
+          <text><textPath href="#circlePath">✦ juicy ✦ glossy ✦ dreamy ✦ kissable ✦ juicy ✦ glossy ✦ dreamy ✦</textPath></text>
+        </svg>
+
+        <!-- Hero tube -->
+        <svg class="hero-tube" id="heroTube" viewBox="0 0 240 560" aria-label="Edwina lip gloss tube">
+          <defs>
+            <linearGradient id="capGrad" x1="0" x2="1">
+              <stop offset="0" stop-color="#f7b9cf" />
+              <stop offset=".25" stop-color="#fff0f6" />
+              <stop offset=".5" stop-color="#f4a3c2" />
+              <stop offset=".8" stop-color="#e57aa5" />
+              <stop offset="1" stop-color="#f7b9cf" />
+            </linearGradient>
+            <linearGradient id="tubeGlass" x1="0" x2="1">
+              <stop offset="0" stop-color="#fff" stop-opacity=".55" />
+              <stop offset=".5" stop-color="#fff" stop-opacity=".15" />
+              <stop offset="1" stop-color="#fff" stop-opacity=".45" />
+            </linearGradient>
+            <linearGradient id="heroLiquid" x1="0" x2="1">
+              <stop offset="0" class="hl-dark" />
+              <stop offset=".45" class="hl-mid" />
+              <stop offset="1" class="hl-dark" />
+            </linearGradient>
+            <clipPath id="heroInner"><rect x="66" y="206" width="108" height="318" rx="34" /></clipPath>
+          </defs>
+
+          <!-- wand (behind tube) -->
+          <g class="wand">
+            <rect x="114" y="190" width="12" height="150" rx="6" fill="#fbd5e5" />
+            <path class="applicator" d="M108 338 C108 330 132 330 132 338 L134 392 C134 404 106 404 106 392 Z" />
+            <ellipse cx="114" cy="352" rx="3" ry="16" fill="#fff" opacity=".6" />
+          </g>
+          <circle class="wand-drop" cx="120" cy="402" r="6" />
+
+          <!-- tube -->
+          <rect x="78" y="190" width="84" height="22" rx="6" fill="#f9cfe0" />
+          <rect x="60" y="200" width="120" height="330" rx="40" fill="url(#tubeGlass)" stroke="#fff" stroke-opacity=".9" stroke-width="3" />
+          <g clip-path="url(#heroInner)">
+            <g class="liquid-wave">
+              <path fill="url(#heroLiquid)" d="M-120 262 Q-90 248 -60 262 T0 262 T60 262 T120 262 T180 262 T240 262 T300 262 T360 262 V560 H-120 Z" />
+            </g>
+            <g class="glitter" id="heroGlitter"></g>
+          </g>
+          <rect x="74" y="222" width="12" height="280" rx="6" fill="#fff" opacity=".65" />
+          <rect x="156" y="240" width="5" height="120" rx="3" fill="#fff" opacity=".4" />
+          <text x="120" y="420" text-anchor="middle" class="tube-word" transform="rotate(-90 120 420)">edwina</text>
+
+          <!-- cap -->
+          <g class="cap">
+            <rect x="66" y="20" width="108" height="178" rx="24" fill="url(#capGrad)" />
+            <rect x="80" y="32" width="10" height="150" rx="5" fill="#fff" opacity=".75" />
+            <rect x="66" y="168" width="108" height="6" fill="#e06e9a" opacity=".35" />
+            <text x="120" y="118" text-anchor="middle" class="cap-mark">E</text>
+          </g>
+        </svg>
+
+        <div class="float-chip chip-1"><span>💧</span> Mirror-shine finish</div>
+        <div class="float-chip chip-2"><span>🍓</span> Smells like strawberries</div>
+        <div class="float-chip chip-3"><span class="stars">★★★★★</span> “obsessed!!”</div>
+
+        <div class="hero-swatches" id="heroSwatches" aria-label="Preview shades"></div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>✦ juicy shine</span><span>💋 non-sticky</span><span>✦ vegan &amp; cruelty-free</span><span>🎀 cute af packaging</span><span>✦ vitamin E + shea</span><span>🍒 new cherry glaze</span><span>✦ free shipping over $50</span>
+        <span>✦ juicy shine</span><span>💋 non-sticky</span><span>✦ vegan &amp; cruelty-free</span><span>🎀 cute af packaging</span><span>✦ vitamin E + shea</span><span>🍒 new cherry glaze</span><span>✦ free shipping over $50</span>
+      </div>
+    </div>
+
+    <!-- ============ SHOP ============ -->
+    <section class="section" id="shop">
+      <div class="section-head reveal">
+        <span class="kicker">the shop</span>
+        <h2>Pick your <span class="script">gloss</span> era</h2>
+        <p>Every shade is buildable, glassy and made to be reapplied in the mirror of every café bathroom.</p>
+      </div>
+
+      <div class="filters reveal" id="filters" role="tablist">
+        <button class="chip active" data-filter="all">All the pretty things</button>
+        <button class="chip" data-filter="gloss">Lip Gloss</button>
+        <button class="chip" data-filter="oil">Lip Oils</button>
+        <button class="chip" data-filter="acc">Accessories</button>
+        <button class="chip" data-filter="set">Gift Sets</button>
+        <span class="chip-glider" id="chipGlider"></span>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- ============ SHADE FINDER ============ -->
+    <section class="section shade-section" id="shades">
+      <div class="section-head reveal">
+        <span class="kicker">virtual swatch</span>
+        <h2>Swipe it <span class="script">on</span></h2>
+        <p>Tap a shade and watch it glide across. No mirror needed.</p>
+      </div>
+
+      <div class="shade-wrap reveal">
+        <div class="lips-card glass">
+          <div class="lips-sparkles" id="lipsSparkles"></div>
+          <svg class="lips" id="lips" viewBox="0 0 400 220" aria-label="Lips wearing selected shade">
+            <defs>
+              <clipPath id="lipClip">
+                <path d="M20 106 C60 76 110 34 160 48 C180 54 190 64 200 68 C210 64 220 54 240 48 C290 34 340 76 380 106 C330 110 260 114 200 110 C140 114 70 110 20 106 Z" />
+                <path d="M20 106 C70 114 140 120 200 116 C260 120 330 114 380 106 C340 160 280 192 200 194 C120 192 60 160 20 106 Z" />
+              </clipPath>
+              <linearGradient id="lipShade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#000" stop-opacity="0" />
+                <stop offset="1" stop-color="#000" stop-opacity=".22" />
+              </linearGradient>
+              <radialGradient id="lipGloss" cx=".5" cy=".3" r=".6">
+                <stop offset="0" stop-color="#fff" stop-opacity=".95" />
+                <stop offset="1" stop-color="#fff" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <g clip-path="url(#lipClip)">
+              <rect id="lipBase" x="0" y="0" width="400" height="220" fill="#ff7eb6" />
+              <rect id="lipSwipe" x="0" y="0" width="0" height="220" fill="#ff7eb6" />
+              <rect x="0" y="0" width="400" height="220" fill="url(#lipShade)" />
+              <path d="M30 110 C 120 116 280 116 370 110" stroke="#000" stroke-opacity=".18" stroke-width="5" fill="none" />
+              <ellipse cx="200" cy="150" rx="70" ry="14" fill="url(#lipGloss)" />
+              <ellipse cx="140" cy="70" rx="26" ry="7" fill="url(#lipGloss)" transform="rotate(-18 140 70)" />
+              <ellipse cx="262" cy="70" rx="26" ry="7" fill="url(#lipGloss)" transform="rotate(18 262 70)" />
+              <ellipse cx="290" cy="140" rx="18" ry="5" fill="#fff" opacity=".55" transform="rotate(-20 290 140)" />
+              <rect class="lip-sheen" x="-120" y="0" width="60" height="220" fill="#fff" opacity=".35" transform="skewX(-20)" />
+            </g>
+          </svg>
+          <div class="swipe-wand" id="swipeWand" aria-hidden="true"></div>
+        </div>
+
+        <div class="shade-panel">
+          <div class="shade-swatches" id="shadeSwatches"></div>
+          <div class="shade-info glass">
+            <span class="shade-kicker" id="shadeKicker">sheer pink shimmer</span>
+            <h3 id="shadeName">Bubblegum Pop</h3>
+            <p id="shadeVibe">Your “I just woke up like this” pink.</p>
+            <div class="shade-row">
+              <span class="price" id="shadePrice">$14</span>
+              <button class="btn btn-gloss btn-sm" id="shadeAdd"><span>Add to bag</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section features">
+      <div class="feature-grid">
+        <div class="feature glass reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 2.5c3 4 6 7.4 6 11a6 6 0 0 1-12 0c0-3.6 3-7 6-11z"/></svg></div>
+          <h4>Mirror-shine</h4><p>A glassy, high-shine finish that catches the light from every angle.</p>
+        </div>
+        <div class="feature glass reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M4 12c3-6 13-6 16 0-3 6-13 6-16 0z"/><circle cx="12" cy="12" r="2.5"/></svg></div>
+          <h4>Never sticky</h4><p>Cushiony and smooth — your hair will never get stuck in it again.</p>
+        </div>
+        <div class="feature glass reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M5 19c0-8 6-14 14-14 0 8-6 14-14 14z"/><path d="M5 19l7-7"/></svg></div>
+          <h4>Skin-loving</h4><p>Vitamin E, shea butter and jojoba keep lips soft, plump and happy.</p>
+        </div>
+        <div class="feature glass reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.3-8.8-8.6C2 8.3 4 5 7.2 5c1.9 0 3.3 1 4.8 2.6C13.5 6 14.9 5 16.8 5 20 5 22 8.3 20.8 11.4 19 15.7 12 20 12 20z"/></svg></div>
+          <h4>Vegan &amp; kind</h4><p>Cruelty-free always. Only bunnies we test on are the cute plush ones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DROP / COUNTDOWN ============ -->
+    <section class="section" id="drop">
+      <div class="drop-card reveal">
+        <div class="drop-liquid" aria-hidden="true">
+          <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path class="wave1" d="M0 80 Q150 30 300 80 T600 80 T900 80 T1200 80 T1500 80 T1800 80 T2100 80 T2400 80 V200 H0Z" /></svg>
+          <svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path class="wave2" d="M0 100 Q150 60 300 100 T600 100 T900 100 T1200 100 T1500 100 T1800 100 T2100 100 T2400 100 V200 H0Z" /></svg>
+        </div>
+        <div class="drop-goo" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+        <div class="drop-copy">
+          <span class="pill-eyebrow light"><span class="dot"></span> limited drop</span>
+          <h2>Cherry <span class="script">Glaze</span></h2>
+          <p>A juicy, glass-like cherry red with micro-shimmer. Only 500 tubes in the first batch — when they’re gone, they’re gone.</p>
+          <div class="countdown" id="countdown">
+            <div><strong id="cdD">00</strong><span>days</span></div>
+            <div><strong id="cdH">00</strong><span>hours</span></div>
+            <div><strong id="cdM">00</strong><span>min</span></div>
+            <div><strong id="cdS">00</strong><span>sec</span></div>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-label"><span>🔥 312 / 500 claimed</span><span>62%</span></div>
+            <div class="progress"><span style="--p:62%"></span></div>
+          </div>
+          <button class="btn btn-white" id="dropBtn"><span>Pre-order Cherry Glaze</span></button>
+        </div>
+        <div class="drop-visual" id="dropVisual"></div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section" id="love">
+      <div class="section-head reveal">
+        <span class="kicker">love notes</span>
+        <h2>The girls are <span class="script">talking</span></h2>
+      </div>
+      <div class="love-track-wrap reveal">
+        <div class="love-track" id="loveTrack"></div>
+      </div>
+    </section>
+
+    <!-- ============ INSTA GRID ============ -->
+    <section class="section">
+      <div class="section-head reveal">
+        <span class="kicker">#GlossedByEdwina</span>
+        <h2>Tag us, <span class="script">pretty</span></h2>
+      </div>
+      <div class="insta" id="insta"></div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="section">
+      <div class="news glass reveal">
+        <svg class="news-bow" viewBox="0 0 200 160" aria-hidden="true">
+          <path fill="url(#bowGradLogo)" d="M100 70 C70 30 20 20 20 60 C20 95 70 95 100 75Z M100 70 C130 30 180 20 180 60 C180 95 130 95 100 75Z M95 78 L70 140 L85 135 L92 148 L100 82Z M105 78 L130 140 L115 135 L108 148 L100 82Z" />
+          <ellipse cx="100" cy="73" rx="14" ry="16" fill="#ff3d8b" />
+        </svg>
+        <h2>Join the <span class="script">Gloss Club</span></h2>
+        <p>First dibs on drops, secret sales &amp; 10% off your first order. Only cute emails, promise.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" required placeholder="your@email.com" aria-label="Email address" />
+          <button class="btn btn-gloss" type="submit"><span>Count me in 💌</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-drip" aria-hidden="true"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-word big">Edwina</span>
+        <p>Gloss, bows &amp; all the pretty little things.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.8 2.4 4.6 5 5"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 2 2.5 4.3 4.6 4.7l1.2-1.2 2 1-.5 1.6c-3.7.4-8.3-4-8-8l1.6-.5 1 2z" class="fill"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div><h5>Shop</h5><a href="#shop">Lip Gloss</a><a href="#shop">Lip Oils</a><a href="#shop">Accessories</a><a href="#shop">Gift Sets</a></div>
+        <div><h5>Help</h5><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Track order</a><a href="#">Contact</a></div>
+        <div><h5>Edwina</h5><a href="#">Our story</a><a href="#love">Reviews</a><a href="#">Wholesale</a><a href="#">Gloss Club</a></div>
+      </div>
+    </div>
+    <div class="footer-base">© <span id="year"></span> Edwina · made with 💗 and a lot of gloss</div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>Your bag <span class="script">xo</span></h3>
+      <button class="icon-btn close" id="closeDrawer" aria-label="Close bag">✕</button>
+    </div>
+    <div class="ship-meter">
+      <p id="shipText">You're $50 away from free shipping 🎀</p>
+      <div class="progress"><span id="shipBar" style="--p:0%"></span></div>
+    </div>
+    <div class="drawer-items" id="drawerItems"></div>
+    <div class="drawer-foot">
+      <div class="subtotal"><span>Subtotal</span><strong id="subtotal">$0</strong></div>
+      <button class="btn btn-gloss full" id="checkoutBtn"><span>Checkout securely ✨</span></button>
+      <p class="tiny">Taxes &amp; shipping calculated at checkout</p>
+    </div>
+  </aside>
+
+  <!-- ============ QUICK VIEW ============ -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-card glass">
+      <button class="icon-btn close" id="closeModal" aria-label="Close">✕</button>
+      <div class="modal-media" id="modalMedia"></div>
+      <div class="modal-body">
+        <span class="kicker" id="modalCat"></span>
+        <h3 id="modalName"></h3>
+        <div class="rating" id="modalRating"></div>
+        <p id="modalDesc"></p>
+        <div class="modal-price"><span class="price" id="modalPrice"></span><span class="old" id="modalOld"></span></div>
+        <div class="qty-row">
+          <div class="qty">
+            <button id="qtyMinus" aria-label="Decrease">−</button>
+            <span id="qtyVal">1</span>
+            <button id="qtyPlus" aria-label="Increase">+</button>
+          </div>
+          <button class="btn btn-gloss" id="modalAdd"><span>Add to bag</span></button>
+        </div>
+        <ul class="perks"><li>🚚 Ships in 24h</li><li>🎁 Free gift wrap</li><li>💗 Easy returns</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
